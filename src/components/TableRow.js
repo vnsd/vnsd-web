@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
-const bizUrl = process.env.BIZ_URL || 'http://localhost:5000/startup/';
+const bizUrl = process.env.BIZ_URL || 'https://vnsd-biz.herokuapp.com/startup/';
 
 class TableRow extends Component {
 

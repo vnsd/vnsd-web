@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-const bizUrl = process.env.BIZ_URL || 'http://localhost:5000/startup/';
+const bizUrl = process.env.BIZ_URL || 'https://vnsd-biz.herokuapp.com/startup/';
 
 export default class Create extends Component {
     constructor(props) {
