@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
+const bizUrl = process.env.BIZ_URL || 'http://localhost:5000/startup/';
+
 export default class Create extends Component {
     constructor(props) {
         super(props);
@@ -50,7 +52,7 @@ export default class Create extends Component {
             description: this.state.description,
             phone: this.state.phone
         };
-        axios.post('https://vnsd-biz.herokuapp.com/startup/create', obj)
+        axios.post(bizUrl + 'create', obj)
             .then(res => console.log(res.data));
 
         this.setState({

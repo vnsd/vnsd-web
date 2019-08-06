@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
+const bizUrl = process.env.BIZ_URL || 'http://localhost:5000/startup/';
+
 class TableRow extends Component {
 
     constructor(props) {
@@ -10,7 +12,7 @@ class TableRow extends Component {
     }
 
     delete() {
-        axios.delete('https://vnsd-biz.herokuapp.com/startup/remove/' + this.props.obj.code)
+        axios.delete(bizUrl + 'remove/' + this.props.obj.code)
             .then(console.log('Deleted'))
             .catch(err => console.log(err))
     }

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
+const bizUrl = process.env.BIZ_URL || 'http://localhost:5000/startup/';
+
 export default class Edit extends Component {
     constructor(props) {
         super(props);
@@ -18,7 +20,7 @@ export default class Edit extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://vnsd-biz.herokuapp.com/startup/get/' + this.props.match.params.code)
+        axios.get(bizUrl + 'get/' + this.props.match.params.code)
             .then(response => {
                 this.setState({
                     code: response.data.code,
@@ -58,7 +60,7 @@ export default class Edit extends Component {
             description: this.state.description,
             phone: this.state.phone
         };
-        axios.put('https://vnsd-biz.herokuapp.com/startup/update/' + this.props.match.params.code, obj)
+        axios.put(bizUrl + 'update/' + this.props.match.params.code, obj)
             .then(res => console.log(res.data));
 
         this.props.history.push('/index');

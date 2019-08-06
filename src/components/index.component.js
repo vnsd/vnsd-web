@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import TableRow from './TableRow';
 
+const bizUrl = process.env.BIZ_URL || 'http://localhost:5000/startup/';
+
 export default class Index extends Component {
 
     constructor(props) {
@@ -10,7 +12,7 @@ export default class Index extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://vnsd-biz.herokuapp.com/startup/get')
+        axios.get(bizUrl + 'get')
             .then(response => {
                 this.setState({startups: response.data});
             })
