@@ -50,7 +50,7 @@ export default class Create extends Component {
             description: this.state.description,
             phone: this.state.phone
         };
-        axios.post('http://localhost:4000/startup/create', obj)
+        axios.post('https://vnsd-biz.herokuapp.com/startup/create', obj)
             .then(res => console.log(res.data));
 
         this.setState({

@@ -18,7 +18,7 @@ export default class Edit extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/startup/get/' + this.props.match.params.code)
+        axios.get('https://vnsd-biz.herokuapp.com/startup/get/' + this.props.match.params.code)
             .then(response => {
                 this.setState({
                     code: response.data.code,
@@ -58,7 +58,7 @@ export default class Edit extends Component {
             description: this.state.description,
             phone: this.state.phone
         };
-        axios.put('http://localhost:4000/startup/update/' + this.props.match.params.code, obj)
+        axios.put('https://vnsd-biz.herokuapp.com/startup/update/' + this.props.match.params.code, obj)
             .then(res => console.log(res.data));
 
         this.props.history.push('/index');

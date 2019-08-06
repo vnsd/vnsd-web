@@ -10,7 +10,7 @@ class TableRow extends Component {
     }
 
     delete() {
-        axios.delete('http://localhost:4000/startup/remove/' + this.props.obj.code)
+        axios.delete('https://vnsd-biz.herokuapp.com/startup/remove/' + this.props.obj.code)
             .then(console.log('Deleted'))
             .catch(err => console.log(err))
     }

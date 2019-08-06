@@ -10,7 +10,7 @@ export default class Index extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/startup/get')
+        axios.get('https://vnsd-biz.herokuapp.com/startup/get')
             .then(response => {
                 this.setState({startups: response.data});
             })
